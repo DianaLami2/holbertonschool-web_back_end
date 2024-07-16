@@ -5,7 +5,8 @@ const response = getResponseFromAPI();
 console.log(response instanceof Promise); // Should log true
 
 response.then((data) => {
-    console.log("Response from API:", data);
+  console.log("Response from API:", data);
 }).catch((error) => {
-    console.error("Error fetching data from API:", error);
+  console.error("Error fetching data from API:", error);
 });
+
