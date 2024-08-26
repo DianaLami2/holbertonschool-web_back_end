@@ -1,3 +1,6 @@
+-- comment
+-- comment 2
+
 DELIMITER $$
 
 CREATE PROCEDURE ComputeAverageScoreForUser (IN user_id INT)
