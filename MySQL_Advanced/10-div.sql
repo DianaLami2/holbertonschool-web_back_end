@@ -1,19 +1,14 @@
---COMMENT EX10
+--ex10 comment
+
 DELIMITER //
 
-CREATE FUNCTION SafeDiv(a INT, b INT)
-RETURNS INT
+
+DROP FUNCTION IF EXISTS SafeDiv;
+
+CREATE FUNCTION SafeDiV (a INT, b INT)
+RETURN FLOAT DETERMINISTIC
 BEGIN
-    DECLARE result INT;
-    
-    IF b = 0 THEN
-        SET result = 0;
-    ELSE
-        SET result = a DIV b;
-    END IF;
-    
-    RETURN result;
-END;
-//
+    RETURN(IF(b=0,0,a/b));
+END //
 
 DELIMITER ;
