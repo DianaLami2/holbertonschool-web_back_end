@@ -1,15 +1,14 @@
 --ex10 comment
 
-DELIMITER $$
+DELIMITER //
 
-CREATE FUNCTION SafeDiv(a INT, b INT)
+
+DROP FUNCTION IF EXISTS SafeDiv;
+
+CREATE FUNCTION SafeDiV (a INT, b INT)
 RETURN FLOAT DETERMINISTIC
 BEGIN
-    IF b = 0 THEN
-        RETURN 0;
-    ELSE
-        RETURN a / b;
-    END IF;
-END $$
+    RETURN(IF(b=0,0,a/b))
+END //
 
 DELIMITER ;
